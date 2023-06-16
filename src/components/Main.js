@@ -8,7 +8,8 @@ const Main = () => {
     const [lat1, lon1] = pointA.split(',').map((coord) => Number(coord));
     const [lat2, lon2] = pointB.split(',').map((coord) => Number(coord));
     const distance = getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2);
-    document.querySelector('.result p').textContent = `Distance: ${distance} km`;
+    // distance should be rounded to 2 decimal places
+    document.querySelector('.result p').textContent = `Distance: ${distance.toFixed(2)} km`;
   };
   return (
     <section className="main">
